@@ -1,0 +1,391 @@
+<html>
+<head>
+<title>index (33).html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #d5b778;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #56a8f5;}
+.s6 { color: #7a7e85;}
+.s7 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+index (33).html</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s1">&gt;</span>
+<span class="s1">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;en&quot;</span><span class="s1">&gt;</span>
+<span class="s1">&lt;head&gt;</span>
+    <span class="s1">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;meta </span><span class="s2">name</span><span class="s3">=&quot;viewport&quot; </span><span class="s2">content</span><span class="s3">=&quot;width=device-width, initial-scale=1.0&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;title&gt;</span><span class="s0">Farkle Chat Room - Enhanced Edition</span><span class="s1">&lt;/title&gt;</span>
+    <span class="s1">&lt;style&gt;</span>
+        <span class="s1">body </span><span class="s0">{</span>
+            <span class="s2">font-family</span><span class="s0">: </span><span class="s3">'Arial'</span><span class="s0">, </span><span class="s3">sans-serif</span><span class="s0">;</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s1">linear-gradient</span><span class="s0">(</span><span class="s4">135</span><span class="s3">deg</span><span class="s0">, </span><span class="s5">#f0f4f8</span><span class="s0">, </span><span class="s5">#d9e2ec</span><span class="s0">);</span>
+            <span class="s2">margin</span><span class="s0">: </span><span class="s4">0</span><span class="s0">;</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">20</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#333</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s1">h1 </span><span class="s0">{</span>
+            <span class="s2">text-align</span><span class="s0">: </span><span class="s3">center</span><span class="s0">;</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#2c3e50</span><span class="s0">;</span>
+            <span class="s2">font-size</span><span class="s0">: </span><span class="s4">2.5</span><span class="s3">em</span><span class="s0">;</span>
+            <span class="s2">margin-bottom</span><span class="s0">: </span><span class="s4">20</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">text-shadow</span><span class="s0">: </span><span class="s4">1</span><span class="s3">px </span><span class="s4">1</span><span class="s3">px </span><span class="s4">2</span><span class="s3">px </span><span class="s1">rgba</span><span class="s0">(</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0.1</span><span class="s0">);</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">container </span><span class="s0">{</span>
+            <span class="s2">max-width</span><span class="s0">: </span><span class="s4">1200</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">margin</span><span class="s0">: </span><span class="s4">0 </span><span class="s3">auto</span><span class="s0">;</span>
+            <span class="s2">display</span><span class="s0">: </span><span class="s3">flex</span><span class="s0">;</span>
+            <span class="s2">gap</span><span class="s0">: </span><span class="s4">20</span><span class="s3">px</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">sidebar </span><span class="s0">{</span>
+            <span class="s2">width</span><span class="s0">: </span><span class="s4">250</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#ffffff</span><span class="s0">;</span>
+            <span class="s2">border-radius</span><span class="s0">: </span><span class="s4">12</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">20</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">box-shadow</span><span class="s0">: </span><span class="s4">0 4</span><span class="s3">px </span><span class="s4">15</span><span class="s3">px </span><span class="s1">rgba</span><span class="s0">(</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0.1</span><span class="s0">);</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">sidebar h2 </span><span class="s0">{</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#2980b9</span><span class="s0">;</span>
+            <span class="s2">margin-bottom</span><span class="s0">: </span><span class="s4">15</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">font-size</span><span class="s0">: </span><span class="s4">1.5</span><span class="s3">em</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">channels-list </span><span class="s0">{</span>
+            <span class="s2">list-style</span><span class="s0">: </span><span class="s3">none</span><span class="s0">;</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">0</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">channels-list li </span><span class="s0">{</span>
+            <span class="s2">margin-bottom</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">channels-list a </span><span class="s0">{</span>
+            <span class="s2">display</span><span class="s0">: </span><span class="s3">block</span><span class="s0">;</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px </span><span class="s4">15</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#ecf0f1</span><span class="s0">;</span>
+            <span class="s2">border-radius</span><span class="s0">: </span><span class="s4">8</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">text-decoration</span><span class="s0">: </span><span class="s3">none</span><span class="s0">;</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#34495e</span><span class="s0">;</span>
+            <span class="s2">transition</span><span class="s0">: </span><span class="s3">background </span><span class="s4">0.3</span><span class="s3">s</span><span class="s0">, </span><span class="s3">color </span><span class="s4">0.3</span><span class="s3">s</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">channels-list a</span><span class="s0">:</span><span class="s1">hover </span><span class="s0">{</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#3498db</span><span class="s0">;</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#ffffff</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">channels-list a</span><span class="s0">.</span><span class="s1">active </span><span class="s0">{</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#2980b9</span><span class="s0">;</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#ffffff</span><span class="s0">;</span>
+            <span class="s2">font-weight</span><span class="s0">: </span><span class="s3">bold</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">main-content </span><span class="s0">{</span>
+            <span class="s2">flex</span><span class="s0">: </span><span class="s4">1</span><span class="s0">;</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#ffffff</span><span class="s0">;</span>
+            <span class="s2">border-radius</span><span class="s0">: </span><span class="s4">12</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">20</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">box-shadow</span><span class="s0">: </span><span class="s4">0 4</span><span class="s3">px </span><span class="s4">15</span><span class="s3">px </span><span class="s1">rgba</span><span class="s0">(</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0.1</span><span class="s0">);</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">join-section </span><span class="s0">{</span>
+            <span class="s2">margin-bottom</span><span class="s0">: </span><span class="s4">30</span><span class="s3">px</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">join-section label </span><span class="s0">{</span>
+            <span class="s2">display</span><span class="s0">: </span><span class="s3">block</span><span class="s0">;</span>
+            <span class="s2">margin-bottom</span><span class="s0">: </span><span class="s4">5</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">font-weight</span><span class="s0">: </span><span class="s3">bold</span><span class="s0">;</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#555</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">join-section input </span><span class="s0">{</span>
+            <span class="s2">width</span><span class="s0">: </span><span class="s4">100</span><span class="s0">%;</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">border</span><span class="s0">: </span><span class="s4">1</span><span class="s3">px solid </span><span class="s5">#ddd</span><span class="s0">;</span>
+            <span class="s2">border-radius</span><span class="s0">: </span><span class="s4">8</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">margin-bottom</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">font-size</span><span class="s0">: </span><span class="s4">1</span><span class="s3">em</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">join-section button </span><span class="s0">{</span>
+            <span class="s2">width</span><span class="s0">: </span><span class="s4">100</span><span class="s0">%;</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">12</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#27ae60</span><span class="s0">;</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#ffffff</span><span class="s0">;</span>
+            <span class="s2">border</span><span class="s0">: </span><span class="s3">none</span><span class="s0">;</span>
+            <span class="s2">border-radius</span><span class="s0">: </span><span class="s4">8</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">cursor</span><span class="s0">: </span><span class="s3">pointer</span><span class="s0">;</span>
+            <span class="s2">font-size</span><span class="s0">: </span><span class="s4">1</span><span class="s3">em</span><span class="s0">;</span>
+            <span class="s2">transition</span><span class="s0">: </span><span class="s3">background </span><span class="s4">0.3</span><span class="s3">s</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">join-section button</span><span class="s0">:</span><span class="s1">hover </span><span class="s0">{</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#2ecc71</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">game-state </span><span class="s0">{</span>
+            <span class="s2">margin-bottom</span><span class="s0">: </span><span class="s4">30</span><span class="s3">px</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">game-state h2 </span><span class="s0">{</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#e67e22</span><span class="s0">;</span>
+            <span class="s2">margin-bottom</span><span class="s0">: </span><span class="s4">15</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">font-size</span><span class="s0">: </span><span class="s4">1.5</span><span class="s3">em</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">game-state p </span><span class="s0">{</span>
+            <span class="s2">margin</span><span class="s0">: </span><span class="s4">5</span><span class="s3">px </span><span class="s4">0</span><span class="s0">;</span>
+            <span class="s2">font-size</span><span class="s0">: </span><span class="s4">1.1</span><span class="s3">em</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">game-state table </span><span class="s0">{</span>
+            <span class="s2">width</span><span class="s0">: </span><span class="s4">100</span><span class="s0">%;</span>
+            <span class="s2">border-collapse</span><span class="s0">: </span><span class="s3">collapse</span><span class="s0">;</span>
+            <span class="s2">margin-top</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">game-state th</span><span class="s0">, .</span><span class="s1">game-state td </span><span class="s0">{</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">border</span><span class="s0">: </span><span class="s4">1</span><span class="s3">px solid </span><span class="s5">#ddd</span><span class="s0">;</span>
+            <span class="s2">text-align</span><span class="s0">: </span><span class="s3">left</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">game-state th </span><span class="s0">{</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#f39c12</span><span class="s0">;</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#ffffff</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">game-actions button </span><span class="s0">{</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px </span><span class="s4">20</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">margin-right</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#8e44ad</span><span class="s0">;</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#ffffff</span><span class="s0">;</span>
+            <span class="s2">border</span><span class="s0">: </span><span class="s3">none</span><span class="s0">;</span>
+            <span class="s2">border-radius</span><span class="s0">: </span><span class="s4">8</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">cursor</span><span class="s0">: </span><span class="s3">pointer</span><span class="s0">;</span>
+            <span class="s2">font-size</span><span class="s0">: </span><span class="s4">1</span><span class="s3">em</span><span class="s0">;</span>
+            <span class="s2">transition</span><span class="s0">: </span><span class="s3">background </span><span class="s4">0.3</span><span class="s3">s</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">game-actions button</span><span class="s0">:</span><span class="s1">hover </span><span class="s0">{</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#9b59b6</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">chat-section </span><span class="s0">{</span>
+            <span class="s2">margin-top</span><span class="s0">: </span><span class="s4">30</span><span class="s3">px</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">chat-section h2 </span><span class="s0">{</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#16a085</span><span class="s0">;</span>
+            <span class="s2">margin-bottom</span><span class="s0">: </span><span class="s4">15</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">font-size</span><span class="s0">: </span><span class="s4">1.5</span><span class="s3">em</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s1">#chat-messages </span><span class="s0">{</span>
+            <span class="s2">height</span><span class="s0">: </span><span class="s4">300</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">border</span><span class="s0">: </span><span class="s4">1</span><span class="s3">px solid </span><span class="s5">#ddd</span><span class="s0">;</span>
+            <span class="s2">border-radius</span><span class="s0">: </span><span class="s4">8</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">15</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">overflow-y</span><span class="s0">: </span><span class="s3">scroll</span><span class="s0">;</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#f9f9f9</span><span class="s0">;</span>
+            <span class="s2">margin-bottom</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">box-shadow</span><span class="s0">: </span><span class="s3">inset </span><span class="s4">0 1</span><span class="s3">px </span><span class="s4">3</span><span class="s3">px </span><span class="s1">rgba</span><span class="s0">(</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0</span><span class="s0">,</span><span class="s4">0.05</span><span class="s0">);</span>
+        <span class="s0">}</span>
+        <span class="s1">#chat-messages p </span><span class="s0">{</span>
+            <span class="s2">margin</span><span class="s0">: </span><span class="s4">5</span><span class="s3">px </span><span class="s4">0</span><span class="s0">;</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">8</span><span class="s3">px </span><span class="s4">12</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">border-radius</span><span class="s0">: </span><span class="s4">20</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#e0f7fa</span><span class="s0">;</span>
+            <span class="s2">display</span><span class="s0">: </span><span class="s3">inline-block</span><span class="s0">;</span>
+            <span class="s2">max-width</span><span class="s0">: </span><span class="s4">80</span><span class="s0">%;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">chat-input </span><span class="s0">{</span>
+            <span class="s2">display</span><span class="s0">: </span><span class="s3">flex</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">chat-input input </span><span class="s0">{</span>
+            <span class="s2">flex</span><span class="s0">: </span><span class="s4">1</span><span class="s0">;</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">border</span><span class="s0">: </span><span class="s4">1</span><span class="s3">px solid </span><span class="s5">#ddd</span><span class="s0">;</span>
+            <span class="s2">border-radius</span><span class="s0">: </span><span class="s4">8</span><span class="s3">px </span><span class="s4">0 0 8</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">font-size</span><span class="s0">: </span><span class="s4">1</span><span class="s3">em</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">chat-input button </span><span class="s0">{</span>
+            <span class="s2">padding</span><span class="s0">: </span><span class="s4">10</span><span class="s3">px </span><span class="s4">20</span><span class="s3">px</span><span class="s0">;</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#3498db</span><span class="s0">;</span>
+            <span class="s2">color</span><span class="s0">: </span><span class="s5">#ffffff</span><span class="s0">;</span>
+            <span class="s2">border</span><span class="s0">: </span><span class="s3">none</span><span class="s0">;</span>
+            <span class="s2">border-radius</span><span class="s0">: </span><span class="s4">0 8</span><span class="s3">px </span><span class="s4">8</span><span class="s3">px </span><span class="s4">0</span><span class="s0">;</span>
+            <span class="s2">cursor</span><span class="s0">: </span><span class="s3">pointer</span><span class="s0">;</span>
+            <span class="s2">font-size</span><span class="s0">: </span><span class="s4">1</span><span class="s3">em</span><span class="s0">;</span>
+            <span class="s2">transition</span><span class="s0">: </span><span class="s3">background </span><span class="s4">0.3</span><span class="s3">s</span><span class="s0">;</span>
+        <span class="s0">}</span>
+        <span class="s0">.</span><span class="s1">chat-input button</span><span class="s0">:</span><span class="s1">hover </span><span class="s0">{</span>
+            <span class="s2">background</span><span class="s0">: </span><span class="s5">#2980b9</span><span class="s0">;</span>
+        <span class="s0">}</span>
+    <span class="s1">&lt;/style&gt;</span>
+<span class="s1">&lt;/head&gt;</span>
+<span class="s1">&lt;body&gt;</span>
+    <span class="s1">&lt;h1&gt;</span><span class="s0">Farkle Chat Room - Multi-Channel Edition</span><span class="s1">&lt;/h1&gt;</span>
+    <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;container&quot;</span><span class="s1">&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;sidebar&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;h2&gt;</span><span class="s0">Chat Channels</span><span class="s1">&lt;/h2&gt;</span>
+            <span class="s1">&lt;ul </span><span class="s2">class</span><span class="s3">=&quot;channels-list&quot;</span><span class="s1">&gt;</span>
+                <span class="s1">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;#general&quot; </span><span class="s2">class</span><span class="s3">=&quot;active&quot;</span><span class="s1">&gt;</span><span class="s0">General Chat</span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="s1">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;#strategy&quot;</span><span class="s1">&gt;</span><span class="s0">Strategy Tips</span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="s1">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;#lobby&quot;</span><span class="s1">&gt;</span><span class="s0">Game Lobby</span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="s1">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;#off-topic&quot;</span><span class="s1">&gt;</span><span class="s0">Off-Topic</span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="s1">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;#support&quot;</span><span class="s1">&gt;</span><span class="s0">Support &amp; Help</span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="s1">&lt;/ul&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;main-content&quot;</span><span class="s1">&gt;</span>
+            <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;join-section&quot;</span><span class="s1">&gt;</span>
+                <span class="s1">&lt;label </span><span class="s2">for</span><span class="s3">=&quot;username&quot;</span><span class="s1">&gt;</span><span class="s0">Username:</span><span class="s1">&lt;/label&gt;</span>
+                <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;username&quot; </span><span class="s2">placeholder</span><span class="s3">=&quot;Enter your username&quot;</span><span class="s1">&gt;</span>
+                <span class="s1">&lt;button </span><span class="s2">id</span><span class="s3">=&quot;join-button&quot;</span><span class="s1">&gt;</span><span class="s0">Join Room</span><span class="s1">&lt;/button&gt;</span>
+            <span class="s1">&lt;/div&gt;</span>
+
+            <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;game-state&quot;</span><span class="s1">&gt;</span>
+                <span class="s1">&lt;h2&gt;</span><span class="s0">Game State</span><span class="s1">&lt;/h2&gt;</span>
+                <span class="s1">&lt;p&gt;</span><span class="s0">Current Player: </span><span class="s1">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;current-player&quot;</span><span class="s1">&gt;&lt;/span&gt;&lt;/p&gt;</span>
+                <span class="s1">&lt;p&gt;</span><span class="s0">Turn Score: </span><span class="s1">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;turn-score&quot;</span><span class="s1">&gt;</span><span class="s0">0</span><span class="s1">&lt;/span&gt;&lt;/p&gt;</span>
+                <span class="s1">&lt;p&gt;</span><span class="s0">Dice: </span><span class="s1">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;dice-results&quot;</span><span class="s1">&gt;&lt;/span&gt;&lt;/p&gt;</span>
+                <span class="s1">&lt;table&gt;</span>
+                    <span class="s1">&lt;thead&gt;</span>
+                        <span class="s1">&lt;tr&gt;</span>
+                            <span class="s1">&lt;th&gt;</span><span class="s0">Player</span><span class="s1">&lt;/th&gt;</span>
+                            <span class="s1">&lt;th&gt;</span><span class="s0">Score</span><span class="s1">&lt;/th&gt;</span>
+                        <span class="s1">&lt;/tr&gt;</span>
+                    <span class="s1">&lt;/thead&gt;</span>
+                    <span class="s1">&lt;tbody </span><span class="s2">id</span><span class="s3">=&quot;total-scores&quot;</span><span class="s1">&gt;</span>
+                        <span class="s6">&lt;!-- Scores will be populated here --&gt;</span>
+                    <span class="s1">&lt;/tbody&gt;</span>
+                <span class="s1">&lt;/table&gt;</span>
+                <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;game-actions&quot;</span><span class="s1">&gt;</span>
+                    <span class="s1">&lt;button </span><span class="s2">id</span><span class="s3">=&quot;roll-dice&quot;</span><span class="s1">&gt;</span><span class="s0">Roll Dice</span><span class="s1">&lt;/button&gt;</span>
+                    <span class="s1">&lt;button </span><span class="s2">id</span><span class="s3">=&quot;bank-points&quot;</span><span class="s1">&gt;</span><span class="s0">Bank Points</span><span class="s1">&lt;/button&gt;</span>
+                <span class="s1">&lt;/div&gt;</span>
+            <span class="s1">&lt;/div&gt;</span>
+
+            <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;chat-section&quot;</span><span class="s1">&gt;</span>
+                <span class="s1">&lt;h2&gt;</span><span class="s0">Chat</span><span class="s1">&lt;/h2&gt;</span>
+                <span class="s1">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;chat-messages&quot;</span><span class="s1">&gt;</span>
+                    <span class="s6">&lt;!-- Chat messages will appear here --&gt;</span>
+                <span class="s1">&lt;/div&gt;</span>
+                <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;chat-input&quot;</span><span class="s1">&gt;</span>
+                    <span class="s1">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s2">id</span><span class="s3">=&quot;chat-input&quot; </span><span class="s2">placeholder</span><span class="s3">=&quot;Type your message...&quot;</span><span class="s1">&gt;</span>
+                    <span class="s1">&lt;button </span><span class="s2">id</span><span class="s3">=&quot;send-button&quot;</span><span class="s1">&gt;</span><span class="s0">Send</span><span class="s1">&lt;/button&gt;</span>
+                <span class="s1">&lt;/div&gt;</span>
+            <span class="s1">&lt;/div&gt;</span>
+        <span class="s1">&lt;/div&gt;</span>
+    <span class="s1">&lt;/div&gt;</span>
+
+    <span class="s1">&lt;script&gt;</span>
+        <span class="s6">// Game state variables</span>
+        <span class="s7">let </span><span class="s0">currentPlayer = </span><span class="s7">null</span><span class="s0">;</span>
+        <span class="s7">let </span><span class="s0">turnScore = </span><span class="s4">0</span><span class="s0">;</span>
+        <span class="s7">let </span><span class="s0">players = {}; </span><span class="s6">// Store player names and scores</span>
+        <span class="s7">let </span><span class="s0">currentChannel = </span><span class="s3">'general'</span><span class="s0">; </span><span class="s6">// Default channel</span>
+        <span class="s7">let </span><span class="s0">messages = { </span><span class="s6">// Store messages by channel</span>
+            <span class="s0">general: [],</span>
+            <span class="s0">strategy: [],</span>
+            <span class="s0">lobby: [],</span>
+            <span class="s3">'off-topic'</span><span class="s0">: [],</span>
+            <span class="s0">support: []</span>
+        <span class="s0">};</span>
+
+        <span class="s6">// Helper function to roll dice</span>
+        <span class="s7">function </span><span class="s0">rollDice() {</span>
+            <span class="s7">const </span><span class="s0">dice = Array(</span><span class="s4">6</span><span class="s0">).fill().map(() =&gt; Math.floor(Math.random() * </span><span class="s4">6</span><span class="s0">) + </span><span class="s4">1</span><span class="s0">);</span>
+            <span class="s7">let </span><span class="s0">score = </span><span class="s4">0</span><span class="s0">;</span>
+            <span class="s7">const </span><span class="s0">counts = {};</span>
+            <span class="s0">dice.forEach(d =&gt; counts[d] = (counts[d] || </span><span class="s4">0</span><span class="s0">) + </span><span class="s4">1</span><span class="s0">);</span>
+            <span class="s6">// Simple scoring: 1s = 100, 5s = 50</span>
+            <span class="s0">score += (counts[</span><span class="s4">1</span><span class="s0">] || </span><span class="s4">0</span><span class="s0">) * </span><span class="s4">100</span><span class="s0">;</span>
+            <span class="s0">score += (counts[</span><span class="s4">5</span><span class="s0">] || </span><span class="s4">0</span><span class="s0">) * </span><span class="s4">50</span><span class="s0">;</span>
+            <span class="s7">return </span><span class="s0">{ dice, score };</span>
+        <span class="s0">}</span>
+
+        <span class="s6">// Helper function to update chat display</span>
+        <span class="s7">function </span><span class="s0">updateChat() {</span>
+            <span class="s7">const </span><span class="s0">chatMessages = document.getElementById(</span><span class="s3">'chat-messages'</span><span class="s0">);</span>
+            <span class="s0">chatMessages.innerHTML = </span><span class="s3">''</span><span class="s0">;</span>
+            <span class="s0">messages[currentChannel].forEach(msg =&gt; {</span>
+                <span class="s7">const </span><span class="s0">message = document.createElement(</span><span class="s3">'p'</span><span class="s0">);</span>
+                <span class="s0">message.textContent = msg;</span>
+                <span class="s0">chatMessages.appendChild(message);</span>
+            <span class="s0">});</span>
+            <span class="s0">chatMessages.scrollTop = chatMessages.scrollHeight;</span>
+        <span class="s0">}</span>
+
+        <span class="s6">// Join Room functionality</span>
+        <span class="s7">const </span><span class="s0">joinButton = document.getElementById(</span><span class="s3">'join-button'</span><span class="s0">);</span>
+        <span class="s0">joinButton.addEventListener(</span><span class="s3">'click'</span><span class="s0">, () =&gt; {</span>
+            <span class="s7">const </span><span class="s0">usernameInput = document.getElementById(</span><span class="s3">'username'</span><span class="s0">);</span>
+            <span class="s7">const </span><span class="s0">username = usernameInput.value.trim();</span>
+            <span class="s7">if </span><span class="s0">(username) {</span>
+                <span class="s0">currentPlayer = username;</span>
+                <span class="s0">document.getElementById(</span><span class="s3">'current-player'</span><span class="s0">).textContent = username;</span>
+                <span class="s7">if </span><span class="s0">(!players[username]) {</span>
+                    <span class="s0">players[username] = </span><span class="s4">0</span><span class="s0">;</span>
+                    <span class="s7">const </span><span class="s0">scoreRow = document.createElement(</span><span class="s3">'tr'</span><span class="s0">);</span>
+                    <span class="s0">scoreRow.innerHTML = </span><span class="s3">`&lt;td&gt;</span><span class="s0">${username}</span><span class="s3">&lt;/td&gt;&lt;td id=&quot;score-</span><span class="s0">${username}</span><span class="s3">&quot;&gt;0&lt;/td&gt;`</span><span class="s0">;</span>
+                    <span class="s0">document.getElementById(</span><span class="s3">'total-scores'</span><span class="s0">).appendChild(scoreRow);</span>
+                <span class="s0">}</span>
+                <span class="s0">messages[currentChannel].push(</span><span class="s3">`[</span><span class="s0">${currentChannel}</span><span class="s3">] </span><span class="s0">${username}</span><span class="s3">: Joined the room!`</span><span class="s0">);</span>
+                <span class="s0">updateChat();</span>
+                <span class="s0">usernameInput.value = </span><span class="s3">''</span><span class="s0">;</span>
+            <span class="s0">} </span><span class="s7">else </span><span class="s0">{</span>
+                <span class="s0">alert(</span><span class="s3">'Please enter a username'</span><span class="s0">);</span>
+            <span class="s0">}</span>
+        <span class="s0">});</span>
+
+        <span class="s6">// Roll Dice functionality</span>
+        <span class="s7">const </span><span class="s0">rollButton = document.getElementById(</span><span class="s3">'roll-dice'</span><span class="s0">);</span>
+        <span class="s0">rollButton.addEventListener(</span><span class="s3">'click'</span><span class="s0">, () =&gt; {</span>
+            <span class="s7">if </span><span class="s0">(!currentPlayer) {</span>
+                <span class="s0">alert(</span><span class="s3">'Please join the room first!'</span><span class="s0">);</span>
+                <span class="s7">return</span><span class="s0">;</span>
+            <span class="s0">}</span>
+            <span class="s7">const </span><span class="s0">{ dice, score } = rollDice();</span>
+            <span class="s0">turnScore = score;</span>
+            <span class="s0">document.getElementById(</span><span class="s3">'dice-results'</span><span class="s0">).textContent = dice.join(</span><span class="s3">', '</span><span class="s0">);</span>
+            <span class="s0">document.getElementById(</span><span class="s3">'turn-score'</span><span class="s0">).textContent = turnScore;</span>
+            <span class="s0">messages[currentChannel].push(</span><span class="s3">`[</span><span class="s0">${currentChannel}</span><span class="s3">] </span><span class="s0">${currentPlayer}</span><span class="s3">: Rolled </span><span class="s0">${dice.join(</span><span class="s3">', '</span><span class="s0">)} </span><span class="s3">(Score: </span><span class="s0">${score}</span><span class="s3">)`</span><span class="s0">);</span>
+            <span class="s0">updateChat();</span>
+        <span class="s0">});</span>
+
+        <span class="s6">// Bank Points functionality</span>
+        <span class="s7">const </span><span class="s0">bankButton = document.getElementById(</span><span class="s3">'bank-points'</span><span class="s0">);</span>
+        <span class="s0">bankButton.addEventListener(</span><span class="s3">'click'</span><span class="s0">, () =&gt; {</span>
+            <span class="s7">if </span><span class="s0">(!currentPlayer || turnScore === </span><span class="s4">0</span><span class="s0">) {</span>
+                <span class="s0">alert(</span><span class="s3">'No points to bank or no player joined!'</span><span class="s0">);</span>
+                <span class="s7">return</span><span class="s0">;</span>
+            <span class="s0">}</span>
+            <span class="s0">players[currentPlayer] += turnScore;</span>
+            <span class="s0">document.getElementById(</span><span class="s3">`score-</span><span class="s0">${currentPlayer}</span><span class="s3">`</span><span class="s0">).textContent = players[currentPlayer];</span>
+            <span class="s0">turnScore = </span><span class="s4">0</span><span class="s0">;</span>
+            <span class="s0">document.getElementById(</span><span class="s3">'turn-score'</span><span class="s0">).textContent = </span><span class="s3">'0'</span><span class="s0">;</span>
+            <span class="s0">document.getElementById(</span><span class="s3">'dice-results'</span><span class="s0">).textContent = </span><span class="s3">''</span><span class="s0">;</span>
+            <span class="s0">messages[currentChannel].push(</span><span class="s3">`[</span><span class="s0">${currentChannel}</span><span class="s3">] </span><span class="s0">${currentPlayer}</span><span class="s3">: Banked </span><span class="s0">${players[currentPlayer]} </span><span class="s3">points`</span><span class="s0">);</span>
+            <span class="s0">updateChat();</span>
+        <span class="s0">});</span>
+
+        <span class="s6">// Channel switching</span>
+        <span class="s0">document.querySelectorAll(</span><span class="s3">'.channels-list a'</span><span class="s0">).forEach(link =&gt; {</span>
+            <span class="s0">link.addEventListener(</span><span class="s3">'click'</span><span class="s0">, </span><span class="s7">function</span><span class="s0">(e) {</span>
+                <span class="s0">e.preventDefault();</span>
+                <span class="s0">document.querySelectorAll(</span><span class="s3">'.channels-list a'</span><span class="s0">).forEach(a =&gt; a.classList.remove(</span><span class="s3">'active'</span><span class="s0">));</span>
+                <span class="s7">this</span><span class="s0">.classList.add(</span><span class="s3">'active'</span><span class="s0">);</span>
+                <span class="s0">currentChannel = </span><span class="s7">this</span><span class="s0">.getAttribute(</span><span class="s3">'href'</span><span class="s0">).substring(</span><span class="s4">1</span><span class="s0">);</span>
+                <span class="s0">updateChat();</span>
+            <span class="s0">});</span>
+        <span class="s0">});</span>
+
+        <span class="s6">// Chat send functionality</span>
+        <span class="s7">const </span><span class="s0">chatInput = document.getElementById(</span><span class="s3">'chat-input'</span><span class="s0">);</span>
+        <span class="s7">const </span><span class="s0">sendButton = document.getElementById(</span><span class="s3">'send-button'</span><span class="s0">);</span>
+        <span class="s0">sendButton.addEventListener(</span><span class="s3">'click'</span><span class="s0">, () =&gt; {</span>
+            <span class="s7">if </span><span class="s0">(chatInput.value.trim() &amp;&amp; currentPlayer) {</span>
+                <span class="s7">const </span><span class="s0">messageText = </span><span class="s3">`[</span><span class="s0">${currentChannel}</span><span class="s3">] </span><span class="s0">${currentPlayer}</span><span class="s3">: </span><span class="s0">${chatInput.value}</span><span class="s3">`</span><span class="s0">;</span>
+                <span class="s0">messages[currentChannel].push(messageText);</span>
+                <span class="s0">updateChat();</span>
+                <span class="s0">chatInput.value = </span><span class="s3">''</span><span class="s0">;</span>
+            <span class="s0">} </span><span class="s7">else </span><span class="s0">{</span>
+                <span class="s0">alert(</span><span class="s3">'Please join the room and enter a message'</span><span class="s0">);</span>
+            <span class="s0">}</span>
+        <span class="s0">});</span>
+    <span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;/body&gt;</span>
+<span class="s1">&lt;/html&gt;</span>
+</pre>
+</body>
+</html>
