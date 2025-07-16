@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farkle Chat Room - Enhanced Edition</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .sidebar h2 {
+            color: #2980b9;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        .channels-list {
+            list-style: none;
+            padding: 0;
+        }
+        .channels-list li {
+            margin-bottom: 10px;
+        }
+        .channels-list a {
+            display: block;
+            padding: 10px 15px;
+            background: #ecf0f1;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #34495e;
+            transition: background 0.3s, color 0.3s;
+        }
+        .channels-list a:hover {
+            background: #3498db;
+            color: #ffffff;
+        }
+        .channels-list a.active {
+            background: #2980b9;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .main-content {
+            flex: 1;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .join-section {
+            margin-bottom: 30px;
+        }
+        .join-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .join-section input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        .join-section button {
+            width: 100%;
+            padding: 12px;
+            background: #27ae60;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        .join-section button:hover {
+            background: #2ecc71;
+        }
+        .game-state {
+            margin-bottom: 30px;
+        }
+        .game-state h2 {
+            color: #e67e22;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        .game-state p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        .game-state table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .game-state th, .game-state td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .game-state th {
+            background: #f39c12;
+            color: #ffffff;
+        }
+        .game-actions button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            background: #8e44ad;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        .game-actions button:hover {
+            background: #9b59b6;
+        }
+        .chat-section {
+            margin-top: 30px;
+        }
+        .chat-section h2 {
+            color: #16a085;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        #chat-messages {
+            height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            overflow-y: scroll;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+        #chat-messages p {
+            margin: 5px 0;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background: #e0f7fa;
+            display: inline-block;
+            max-width: 80%;
+        }
+        .chat-input {
+            display: flex;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px 0 0 8px;
+            font-size: 1em;
+        }
+        .chat-input button {
+            padding: 10px 20px;
+            background: #3498db;
+            color: #ffffff;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        .chat-input button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Farkle Chat Room - Multi-Channel Edition</h1>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Chat Channels</h2>
+            <ul class="channels-list">
+                <li><a href="#general" class="active">General Chat</a></li>
+                <li><a href="#strategy">Strategy Tips</a></li>
+                <li><a href="#lobby">Game Lobby</a></li>
+                <li><a href="#off-topic">Off-Topic</a></li>
+                <li><a href="#support">Support & Help</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="join-section">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter your username">
+                <button id="join-button">Join Room</button>
+            </div>
+
+            <div class="game-state">
+                <h2>Game State</h2>
+                <p>Current Player: <span id="current-player"></span></p>
+                <p>Turn Score: <span id="turn-score">0</span></p>
+                <p>Dice: <span id="dice-results"></span></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="total-scores">
+                        <!-- Scores will be populated here -->
+                    </tbody>
+                </table>
+                <div class="game-actions">
+                    <button id="roll-dice">Roll Dice</button>
+                    <button id="bank-points">Bank Points</button>
+                </div>
+            </div>
+
+            <div class="chat-section">
+                <h2>Chat</h2>
+                <div id="chat-messages">
+                    <!-- Chat messages will appear here -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chat-input" placeholder="Type your message...">
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game state variables
+        let currentPlayer = null;
+        let turnScore = 0;
+        let players = {}; // Store player names and scores
+        let currentChannel = 'general'; // Default channel
+        let messages = { // Store messages by channel
+            general: [],
+            strategy: [],
+            lobby: [],
+            'off-topic': [],
+            support: []
+        };
+
+        // Helper function to roll dice
+        function rollDice() {
+            const dice = Array(6).fill().map(() => Math.floor(Math.random() * 6) + 1);
+            let score = 0;
+            const counts = {};
+            dice.forEach(d => counts[d] = (counts[d] || 0) + 1);
+            // Simple scoring: 1s = 100, 5s = 50
+            score += (counts[1] || 0) * 100;
+            score += (counts[5] || 0) * 50;
+            return { dice, score };
+        }
+
+        // Helper function to update chat display
+        function updateChat() {
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.innerHTML = '';
+            messages[currentChannel].forEach(msg => {
+                const message = document.createElement('p');
+                message.textContent = msg;
+                chatMessages.appendChild(message);
+            });
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Join Room functionality
+        const joinButton = document.getElementById('join-button');
+        joinButton.addEventListener('click', () => {
+            const usernameInput = document.getElementById('username');
+            const username = usernameInput.value.trim();
+            if (username) {
+                currentPlayer = username;
+                document.getElementById('current-player').textContent = username;
+                if (!players[username]) {
+                    players[username] = 0;
+                    const scoreRow = document.createElement('tr');
+                    scoreRow.innerHTML = `<td>${username}</td><td id="score-${username}">0</td>`;
+                    document.getElementById('total-scores').appendChild(scoreRow);
+                }
+                messages[currentChannel].push(`[${currentChannel}] ${username}: Joined the room!`);
+                updateChat();
+                usernameInput.value = '';
+            } else {
+                alert('Please enter a username');
+            }
+        });
+
+        // Roll Dice functionality
+        const rollButton = document.getElementById('roll-dice');
+        rollButton.addEventListener('click', () => {
+            if (!currentPlayer) {
+                alert('Please join the room first!');
+                return;
+            }
+            const { dice, score } = rollDice();
+            turnScore = score;
+            document.getElementById('dice-results').textContent = dice.join(', ');
+            document.getElementById('turn-score').textContent = turnScore;
+            messages[currentChannel].push(`[${currentChannel}] ${currentPlayer}: Rolled ${dice.join(', ')} (Score: ${score})`);
+            updateChat();
+        });
+
+        // Bank Points functionality
+        const bankButton = document.getElementById('bank-points');
+        bankButton.addEventListener('click', () => {
+            if (!currentPlayer || turnScore === 0) {
+                alert('No points to bank or no player joined!');
+                return;
+            }
+            players[currentPlayer] += turnScore;
+            document.getElementById(`score-${currentPlayer}`).textContent = players[currentPlayer];
+            turnScore = 0;
+            document.getElementById('turn-score').textContent = '0';
+            document.getElementById('dice-results').textContent = '';
+            messages[currentChannel].push(`[${currentChannel}] ${currentPlayer}: Banked ${players[currentPlayer]} points`);
+            updateChat();
+        });
+
+        // Channel switching
+        document.querySelectorAll('.channels-list a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.channels-list a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+                currentChannel = this.getAttribute('href').substring(1);
+                updateChat();
+            });
+        });
+
+        // Chat send functionality
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+        sendButton.addEventListener('click', () => {
+            if (chatInput.value.trim() && currentPlayer) {
+                const messageText = `[${currentChannel}] ${currentPlayer}: ${chatInput.value}`;
+                messages[currentChannel].push(messageText);
+                updateChat();
+                chatInput.value = '';
+            } else {
+                alert('Please join the room and enter a message');
+            }
+        });
+    </script>
+</body>
+</html>
