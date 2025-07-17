@@ -1,0 +1,22 @@
+{
+  "name": "farkle-chat-room",
+  "version": "1.0.0",
+  "description": "A multiplayer Farkle dice game with chat functionality",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build complete - static files ready for deployment'",
+    "start": "echo 'Starting local development server...' && python3 -m http.server 3000 2>/dev/null || python -m http.server 3000 2>/dev/null || echo 'Python not available. Open index.html directly in browser.'",
+    "dev": "npm run start"
+  },
+  "keywords": [
+    "farkle",
+    "dice",
+    "game",
+    "chat",
+    "multiplayer"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
