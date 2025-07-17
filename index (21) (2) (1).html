@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farkle Chat Room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #e0f7e0; /* Light green background */
+        }
+        #chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #4caf50; /* Vibrant green border */
+            padding: 20px;
+            background-color: #f5fff5; /* Very light green background */
+        }
+        #chat-log {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #4caf50; /* Green border */
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #chat-input {
+            width: 80%;
+            padding: 5px;
+            border: 1px solid #4caf50; /* Green border */
+        }
+        #game-area {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #4caf50; /* Green border */
+        }
+        #dice-display {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333; /* Dark text for contrast */
+        }
+        #friends-list {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #4caf50; /* Green border */
+        }
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+            background-color: #4caf50; /* Green buttons */
+            color: white; /* White text for contrast */
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #388e3c; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <h2>Farkle Chat Room</h2>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+            <button onclick="joinRoom()">Join Room</button>
+        </div>
+        <div id="game-area" style="display: none;">
+            <h3>Game State</h3>
+            <p>Current Player: <span id="current-player"></span></p>
+            <p>Turn Score: <span id="turn-score">0</span></p>
+            <p>Total Scores: <span id="total-scores"></span></p>
+            <div id="dice-display"></div>
+            <button onclick="rollDice()">Roll Dice</button>
+            <button onclick="bankPoints()">Bank Points</button>
+        </div>
+        <div id="chat-log"></div>
+        <div id="friends-list">
+            <h3>Friends</h3>
+            <div>
+                <label for="friend-request-input">Send Friend Request:</label>
+                <input type="text" id="friend-request-input" placeholder="Enter username">
+                <button onclick="sendFriendRequest()">Send Request</button>
+            </div>
+            <div id="pending-requests">
+                <h4>Pending Requests</h4>
+                <p id="pending-requests-display">No pending requests.</p>
+            </div>
+            <div id="accepted-friends">
+                <h4>Friends List</h4>
+                <p id="friends-display">No friends yet.</p>
+            </div>
+        </div>
+        <input type="text" id="chat-input" placeholder="Type a message or /roll">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        let username = '';
+        let currentPlayer = '';
+        let players = [];
+        let scores = {};
+        let turnScore = 0;
+        let dice = [];
+        let gameStarted = false;
+        let pendingRequests = []; // {from: "user1", to: "user2"}
+        let friends = []; // {user: "friendName"}
+
+        function joinRoom() {
+            username = document.getElementById('username').value.trim();
+            if (username) {
+                if (players.includes(username)) {
+                    addChatMessage('Username already taken. Please choose another.');
+                    return;
+                }
+                players.push(username);
+                scores[username] = 0;
+                currentPlayer = players[0];
+                gameStarted = true;
+                document.getElementById('game-area').style.display = 'block';
+                updateGameState();
+                addChatMessage(`${username} joined the room.`);
+            }
+        }
+
+        function sendFriendRequest() {
+            let target = document.getElementById('friend-request-input').value.trim();
+            if (!target) {
+                addChatMessage('Please enter a username to send a friend request.');
+                return;
+            }
+            if (target === username) {
+                addChatMessage('You cannot send a friend request to yourself.');
+                return;
+            }
+            if (!players.includes(target)) {
+                addChatMessage(`User ${target} not found in the room.`);
+                return;
+            }
+            if (pendingRequests.some(req => req.from === username && req.to === target)) {
+                addChatMessage(`Friend request to ${target} already sent.`);
+                return;
+            }
+            if (friends.some(f => f.user === target)) {
+                addChatMessage(`${target} is already your friend.`);
+                return;
+            }
+            pendingRequests.push({from: username, to: target});
+            addChatMessage(`Friend request sent to ${target}.`);
+            document.getElementById('friend-request-input').value = '';
+            updateGameState();
+        }
+
+        function acceptFriendRequest(from, to) {
+            if (to !== username) return;
+            pendingRequests = pendingRequests.filter(req => !(req.from === from && req.to === to));
+            friends.push({user: from});
+            addChatMessage(`You are now friends with ${from}.`);
+            updateGameState();
+        }
+
+        function declineFriendRequest(from, to) {
+            if (to !== username) return;
+            pendingRequests = pendingRequests.filter(req => !(req.from === from && req.to === to));
+            addChatMessage(`You declined a friend request from ${from}.`);
+            updateGameState();
+        }
+
+        function rollDice() {
+            if (username !== currentPlayer || !gameStarted) return;
+            dice = Array(6).fill().map(() => Math.floor(Math.random() * 6) + 1);
+            let diceString = `[${dice.join(', ')}]`;
+            addChatMessage(`${username} rolled ${diceString}`);
+            calculateTurnScore();
+            updateGameState();
+        }
+
+        function calculateTurnScore() {
+            // Simplified scoring: count 1s and 5s only
+            let ones = dice.filter(d => d === 1).length;
+            let fives = dice.filter(d => d === 5).length;
+            turnScore = ones * 100 + fives * 50;
+            if (turnScore === 0) {
+                addChatMessage(`${username} Farkled! Turn over.`);
+                turnScore = 0;
+                nextTurn();
+            }
+        }
+
+        function bankPoints() {
+            if (username !== currentPlayer || !gameStarted) return;
+            if (turnScore > 0) {
+                scores[username] += turnScore;
+                addChatMessage(`${username} banked ${turnScore} points.`);
+                turnScore = 0;
+                nextTurn();
+            }
+            updateGameState();
+        }
+
+        function nextTurn() {
+            let currentIndex = players.indexOf(currentPlayer);
+            currentPlayer = players[(currentIndex + 1) % players.length];
+            dice = [];
+            updateGameState();
+        }
+
+        function updateGameState() {
+            document.getElementById('current-player').textContent = currentPlayer;
+            document.getElementById('turn-score').textContent = turnScore;
+            document.getElementById('dice-display').textContent = dice.length ? `[${dice.join(', ')}]` : '';
+            document.getElementById('total-scores').textContent = JSON.stringify(scores);
+            // Update pending requests
+            let pendingDisplay = document.getElementById('pending-requests-display');
+            let userRequests = pendingRequests.filter(req => req.to === username);
+            if (userRequests.length) {
+                pendingDisplay.innerHTML = userRequests.map(req => 
+                    `${req.from} wants to be your friend. ` +
+                    `<button onclick="acceptFriendRequest('${req.from}', '${req.to}')">Accept</button> ` +
+                    `<button onclick="declineFriendRequest('${req.from}', '${req.to}')">Decline</button>`
+                ).join('<br>');
+            } else {
+                pendingDisplay.textContent = 'No pending requests.';
+            }
+            // Update friends list
+            let friendsDisplay = document.getElementById('friends-display');
+            friendsDisplay.textContent = friends.length ? friends.map(f => f.user).join(', ') : 'No friends yet.';
+        }
+
+        function sendMessage() {
+            let input = document.getElementById('chat-input').value.trim();
+            if (input && username) {
+                if (input === '/roll' && username === currentPlayer) {
+                    rollDice();
+                } else {
+                    addChatMessage(`${username}: ${input}`);
+                }
+                document.getElementById('chat-input').value = '';
+            }
+        }
+
+        function addChatMessage(message) {
+            let chatLog = document.getElementById('chat-log');
+            let messageDiv = document.createElement('div');
+            messageDiv.textContent = message;
+            chatLog.appendChild(messageDiv);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+    </script>
+</body>
+</html>
