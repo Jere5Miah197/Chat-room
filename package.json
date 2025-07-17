@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "echo 'Build complete - static files ready for deployment'",
-    "start": "echo 'Starting local development server...' && python3 -m http.server 3000 2>/dev/null || python -m http.server 3000 2>/dev/null || echo 'Python not available. Open index.html directly in browser.'",
+    "start": "echo 'Starting local development server...' && echo 'Please open index.html directly in your browser or use a local web server.'",
     "dev": "npm run start"
   },
   "keywords": [
