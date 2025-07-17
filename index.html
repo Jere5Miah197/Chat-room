@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farkle Game Room</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1 class="title">🎲 Farkle Game Room</h1>
+            <div class="player-info" id="player-info" style="display: none;">
+                <span class="player-name" id="current-user"></span>
+                <button class="leave-btn" onclick="leaveGame()">Leave Game</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Login Section -->
+            <div class="login-section" id="login-section">
+                <div class="login-card">
+                    <h2>Join the Game</h2>
+                    <div class="input-group">
+                        <label for="username-input">Enter your username</label>
+                        <input type="text" id="username-input" placeholder="Your username" maxlength="20">
+                        <button class="primary-btn" onclick="joinGame()">Join Game</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Section -->
+            <div class="game-section" id="game-section" style="display: none;">
+                <div class="game-layout">
+                    <!-- Game Board -->
+                    <div class="game-board">
+                        <div class="game-status">
+                            <div class="current-turn">
+                                <h3>Current Turn</h3>
+                                <div class="turn-info">
+                                    <span class="current-player" id="current-player">Waiting...</span>
+                                    <div class="turn-score">
+                                        Score: <span id="turn-score">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dice-section">
+                            <h3>Dice</h3>
+                            <div class="dice-container" id="dice-container">
+                                <!-- Dice will be generated here -->
+                            </div>
+                            <div class="dice-actions">
+                                <button class="action-btn roll-btn" id="roll-btn" onclick="rollDice()">
+                                    🎲 Roll Dice
+                                </button>
+                                <button class="action-btn bank-btn" id="bank-btn" onclick="bankPoints()" disabled>
+                                    💰 Bank Points
+                                </button>
+                                <button class="action-btn pass-btn" id="pass-btn" onclick="passTurn()" disabled>
+                                    ⏭️ Pass Turn
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="scoring-info">
+                            <h4>Scoring Rules</h4>
+                            <div class="scoring-rules">
+                                <div class="rule">1 = 100 points</div>
+                                <div class="rule">5 = 50 points</div>
+                                <div class="rule">Three 1s = 1000 points</div>
+                                <div class="rule">Three of any other = face value × 100</div>
+                                <div class="rule">Straight (1-6) = 1500 points</div>
+                                <div class="rule">Three pairs = 1500 points</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <!-- Scoreboard -->
+                        <div class="scoreboard">
+                            <h3>Scoreboard</h3>
+                            <div class="scores-list" id="scores-list">
+                                <!-- Player scores will be displayed here -->
+                            </div>
+                        </div>
+
+                        <!-- Friends System -->
+                        <div class="friends-section">
+                            <h3>Friends</h3>
+                            <div class="friend-actions">
+                                <input type="text" id="friend-input" placeholder="Username" maxlength="20">
+                                <button class="small-btn" onclick="sendFriendRequest()">Add Friend</button>
+                            </div>
+                            
+                            <div class="friend-requests" id="friend-requests" style="display: none;">
+                                <h4>Friend Requests</h4>
+                                <div id="requests-list"></div>
+                            </div>
+                            
+                            <div class="friends-list">
+                                <h4>Your Friends</h4>
+                                <div id="friends-display">No friends yet</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Section -->
+                <div class="chat-section">
+                    <div class="chat-header">
+                        <h3>Game Chat</h3>
+                        <button class="small-btn" onclick="clearChat()">Clear</button>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="system-message">Welcome to Farkle! Roll dice to start playing.</div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" placeholder="Type a message..." maxlength="200">
+                        <button class="send-btn" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
